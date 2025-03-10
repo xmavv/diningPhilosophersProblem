@@ -12,7 +12,7 @@ private:
     Fork& rightFork;
 
 public:
-    Philosopher(int id, Fork &leftFork, Fork &rightFork): id(id), leftFork(leftFork), rightFork(rightFork){};
+    Philosopher(int id, Fork &leftFork, Fork &rightFork);
     void think();
     void eat();
     void exist();
