@@ -4,9 +4,10 @@
 
 #include "src/Philosopher.h"
 #include "src/Fork.h"
+const int numOfPhilosophers = 10;
+vector<string> states(numOfPhilosophers, "living");
 
 int main() {
-    int numOfPhilosophers = 10;
     vector<Philosopher> philosophers;
     vector<Fork> forks(numOfPhilosophers);
     vector<thread> threads;
@@ -15,7 +16,7 @@ int main() {
         int left = i;
         int right = (i+1)%numOfPhilosophers;
         //assign forks to the philosophers
-        philosophers.emplace_back(i, forks[left], forks[right]);
+        philosophers.emplace_back(i, forks[left], forks[right], states);
     }
 
     for(int i=0; i<numOfPhilosophers; i++) {

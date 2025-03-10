@@ -51,19 +51,19 @@ build cmake_object_order_depends_target_untitled4: phony || CMakeFiles/untitled4
 
 build CMakeFiles/untitled4.dir/main.cpp.obj: CXX_COMPILER__untitled4_unscanned_Debug C$:/Users/mrmat/CLionProjects/untitled4/main.cpp || cmake_object_order_depends_target_untitled4
   DEP_FILE = CMakeFiles\untitled4.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\untitled4.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled4.dir
 
 build CMakeFiles/untitled4.dir/src/Philosopher.cpp.obj: CXX_COMPILER__untitled4_unscanned_Debug C$:/Users/mrmat/CLionProjects/untitled4/src/Philosopher.cpp || cmake_object_order_depends_target_untitled4
   DEP_FILE = CMakeFiles\untitled4.dir\src\Philosopher.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\untitled4.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled4.dir\src
 
 build CMakeFiles/untitled4.dir/src/Fork.cpp.obj: CXX_COMPILER__untitled4_unscanned_Debug C$:/Users/mrmat/CLionProjects/untitled4/src/Fork.cpp || cmake_object_order_depends_target_untitled4
   DEP_FILE = CMakeFiles\untitled4.dir\src\Fork.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\untitled4.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled4.dir\src
 
@@ -76,7 +76,8 @@ build CMakeFiles/untitled4.dir/src/Fork.cpp.obj: CXX_COMPILER__untitled4_unscann
 # Link the executable untitled4.exe
 
 build untitled4.exe: CXX_EXECUTABLE_LINKER__untitled4_Debug CMakeFiles/untitled4.dir/main.cpp.obj CMakeFiles/untitled4.dir/src/Philosopher.cpp.obj CMakeFiles/untitled4.dir/src/Fork.cpp.obj
-  FLAGS = -g
+  FLAGS = -static-libstdc++ -static-libgcc -g
+  LINK_FLAGS = -static
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\untitled4.dir
   POST_BUILD = cd .
