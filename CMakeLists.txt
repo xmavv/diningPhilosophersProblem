@@ -8,5 +8,4 @@ set(CMAKE_EXE_LINKER_FLAGS "-static")
 add_executable(untitled4 main.cpp
         src/Philosopher.cpp
         src/Philosopher.h
-        src/Fork.cpp
         src/Fork.h)

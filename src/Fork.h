@@ -1,14 +1,13 @@
 #ifndef UNTITLED4_FORK_H
 #define UNTITLED4_FORK_H
 #include <iostream>
+#include <mutex>
 
 using namespace std;
 
 class Fork {
 public:
-    bool isTaken = false;
-    void pickUpFork();
-    void putDownFork();
+    mutex mFork;
 };
 
 #endif //UNTITLED4_FORK_H

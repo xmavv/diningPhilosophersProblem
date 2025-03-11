@@ -1,6 +1,9 @@
 # ninja log v5
-19	1637	7633472559379636	CMakeFiles/untitled4.dir/src/Philosopher.cpp.obj	39419fc2ad72846b
+3	769	7633480503594951	CMakeFiles/untitled4.dir/src/Philosopher.cpp.obj	39419fc2ad72846b
 39	2010	7633472563078206	CMakeFiles/untitled4.dir/main.cpp.obj	ef3ff93d78c5af02
-2010	2573	7633472568665679	untitled4.exe	221b3f92bbf8b20f
+770	1253	7633480508295270	untitled4.exe	221b3f92bbf8b20f
 4	1503	7633472557811203	CMakeFiles/untitled4.dir/src/Fork.cpp.obj	eb3a8adb70d883b1
-2	840	7633472579904178	build.ninja	634d5f1e2da19ff5
+2	840	7634297064732969	build.ninja	634d5f1e2da19ff5
+20	808	7634302332165268	CMakeFiles/untitled4.dir/src/Philosopher.cpp.obj	39419fc2ad72846b
+5	920	7634302333261137	CMakeFiles/untitled4.dir/main.cpp.obj	ef3ff93d78c5af02
+920	1224	7634302336221891	untitled4.exe	2328e058f604e4e9

@@ -11,13 +11,17 @@ private:
     int id;
     Fork& leftFork;
     Fork& rightFork;
-    vector<string> states;
+    string currentState;
+    static mutex mPrint;
 
 public:
-    Philosopher(int id, Fork &leftFork, Fork &rightFork, vector<string> states);
+    Philosopher(int id, Fork &leftFork, Fork &rightFork);
     void think();
     void eat();
+    void pickUpForks();
+    void putDownForks();
     void exist();
+    void printState(string state);
 };
 
 #endif //UNTITLED4_PHILOSOPHER_H
