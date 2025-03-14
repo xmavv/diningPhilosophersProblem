@@ -14,7 +14,7 @@
 
 int colorOutput(int state) {
     if(state == static_cast<int>(State::EAT)) return 12;
-    if(state == static_cast<int>(State::THINK)) return 10;
+    if(state == static_cast<int>(State::THINK)) return 7;
     if(state == static_cast<int>(State::EXIST)) return 14;
     if(state == static_cast<int>(State::PICK_UP_FORK)) return 9;
     if(state == static_cast<int>(State::PUT_DOWN_FORK)) return 11;

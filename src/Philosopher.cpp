@@ -12,7 +12,7 @@ Philosopher::Philosopher(int id, Fork& leftFork, Fork& rightFork)
 
 void Philosopher::think() {
     printState(0);
-    this_thread::sleep_for(chrono::seconds(2));
+    this_thread::sleep_for(chrono::seconds(rand() % 5 + 1));
 }
 
 void Philosopher::eat() {
@@ -20,7 +20,7 @@ void Philosopher::eat() {
     //parzystosc i nieparzystosc
 
     printState(1);
-    this_thread::sleep_for(chrono::seconds(2));
+    this_thread::sleep_for(chrono::seconds(rand() % 5 + 1));
 }
 
 void Philosopher::pickUpForks() {
@@ -28,7 +28,7 @@ void Philosopher::pickUpForks() {
     rightFork.mFork.lock();
 
     printState(5);
-    this_thread::sleep_for(chrono::seconds(2));
+    this_thread::sleep_for(chrono::seconds(rand() % 1 + 1));
 }
 
 void Philosopher::putDownForks() {
@@ -36,7 +36,7 @@ void Philosopher::putDownForks() {
     rightFork.mFork.unlock();
 
     printState(7);
-    this_thread::sleep_for(chrono::seconds(2));
+    this_thread::sleep_for(chrono::seconds(rand() % 1 + 1));
 }
 
 void Philosopher::exist() {
