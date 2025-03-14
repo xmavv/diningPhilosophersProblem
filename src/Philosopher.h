@@ -22,6 +22,9 @@ public:
     void putDownForks();
     void exist();
     void printState(string state);
+
+    int getId();
+    string getCurrentState();
 };
 
 #endif //UNTITLED4_PHILOSOPHER_H

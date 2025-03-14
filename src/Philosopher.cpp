@@ -1,6 +1,8 @@
 #include "./Philosopher.h"
 #include <thread>
 
+void printDinner();
+
 //needs to be like this because the address (reference) cannot be assign after constructor runs, reference cannot be null
 Philosopher::Philosopher(int id, Fork& leftFork, Fork& rightFork)
         : id(id),
@@ -47,11 +49,24 @@ void Philosopher::exist() {
 }
 
 void Philosopher::printState(string state) {
-    //clear console
-    system("cls");
+
+
+    mPrint.lock();
+
+    currentState = state;
+    printDinner();
+
+    mPrint.unlock();
 
     //TODO
     //1. dodac kolory jak w projekcie z algorytmow
     //2. no i teraz jakas globalna funkcja i wowczas wykorzystujemy ten static mutex do printowania zeby tylko jeden mogl naraz pisac
-    cout << "philosopher " << id << "is " << state << endl;
+}
+
+int Philosopher::getId() {
+    return id;
+}
+
+string Philosopher::getCurrentState() {
+    return currentState;
 }
