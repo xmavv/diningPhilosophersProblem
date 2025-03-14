@@ -2,6 +2,23 @@
 #include <thread>
 #include "src/Philosopher.h"
 #include "src/Fork.h"
+#include "src/State.h"
+
+#include <iostream>
+#define NOMINMAX
+#define WIN32_LEAN_AND_MEAN
+#undef BYTE
+#undef WORD
+#undef DWORD
+#include <windows.h>
+
+int colorOutput(int state) {
+    if(state == static_cast<int>(State::EAT)) return 12;
+    if(state == static_cast<int>(State::THINK)) return 10;
+    if(state == static_cast<int>(State::EXIST)) return 14;
+    if(state == static_cast<int>(State::PICK_UP_FORK)) return 9;
+    if(state == static_cast<int>(State::PUT_DOWN_FORK)) return 11;
+}
 
 mutex Philosopher::mPrint;
 vector<Philosopher>* pPilosophers = nullptr;
@@ -12,7 +29,18 @@ void printDinner() {
 
     //needs to be a reference not a copy...
     for(auto& philosopher: *pPilosophers) {
-        cout << "philosopher " << philosopher.getId()<< "is " << philosopher.getCurrentState() << endl;
+        cout << "philosopher ";
+
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), colorOutput(philosopher.getCurrentState()));
+        cout << philosopher.getId();
+
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+        cout << " is ";
+
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), colorOutput(philosopher.getCurrentState()));
+        cout << philosopher.castCurrentState() << endl;
+
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     }
 }
 

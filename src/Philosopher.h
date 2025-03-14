@@ -1,6 +1,7 @@
 #ifndef UNTITLED4_PHILOSOPHER_H
 #define UNTITLED4_PHILOSOPHER_H
 #include "./Fork.h"
+#include "./State.h"
 #include <iostream>
 #include <vector>
 
@@ -11,7 +12,7 @@ private:
     int id;
     Fork& leftFork;
     Fork& rightFork;
-    string currentState;
+    int currentState;
     static mutex mPrint;
 
 public:
@@ -21,10 +22,11 @@ public:
     void pickUpForks();
     void putDownForks();
     void exist();
-    void printState(string state);
+    void printState(int state);
 
     int getId();
-    string getCurrentState();
+    int getCurrentState();
+    string castCurrentState();
 };
 
 #endif //UNTITLED4_PHILOSOPHER_H

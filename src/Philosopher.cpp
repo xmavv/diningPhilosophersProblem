@@ -8,10 +8,10 @@ Philosopher::Philosopher(int id, Fork& leftFork, Fork& rightFork)
         : id(id),
           leftFork(id % 2 == 0 ? leftFork : rightFork),
           rightFork(id % 2 == 1 ? leftFork : rightFork),
-          currentState("existing") {}
+          currentState(2) {}
 
 void Philosopher::think() {
-    printState("thinking");
+    printState(0);
     this_thread::sleep_for(chrono::seconds(2));
 }
 
@@ -19,7 +19,7 @@ void Philosopher::eat() {
     //TODO
     //parzystosc i nieparzystosc
 
-    printState("eating");
+    printState(1);
     this_thread::sleep_for(chrono::seconds(2));
 }
 
@@ -27,7 +27,7 @@ void Philosopher::pickUpForks() {
     leftFork.mFork.lock();
     rightFork.mFork.lock();
 
-    printState("picked up forks");
+    printState(5);
     this_thread::sleep_for(chrono::seconds(2));
 }
 
@@ -35,7 +35,7 @@ void Philosopher::putDownForks() {
     leftFork.mFork.unlock();
     rightFork.mFork.unlock();
 
-    printState("put down forks");
+    printState(7);
     this_thread::sleep_for(chrono::seconds(2));
 }
 
@@ -48,7 +48,7 @@ void Philosopher::exist() {
     }
 }
 
-void Philosopher::printState(string state) {
+void Philosopher::printState(int state) {
 
 
     mPrint.lock();
@@ -67,6 +67,14 @@ int Philosopher::getId() {
     return id;
 }
 
-string Philosopher::getCurrentState() {
+int Philosopher::getCurrentState() {
     return currentState;
+}
+
+string Philosopher::castCurrentState() {
+    if(currentState == static_cast<int>(State::EAT)) return "eating";
+    if(currentState == static_cast<int>(State::THINK)) return "thinking";
+    if(currentState == static_cast<int>(State::EXIST)) return "existing";
+    if(currentState == static_cast<int>(State::PICK_UP_FORK)) return "picking up forks";
+    if(currentState == static_cast<int>(State::PUT_DOWN_FORK)) return "putting down forks";
 }
