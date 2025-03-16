@@ -1,5 +1,5 @@
-#ifndef UNTITLED4_FORK_H
-#define UNTITLED4_FORK_H
+#ifndef SRC_FORK_H_
+#define SRC_FORK_H_
 #include <iostream>
 #include <mutex>
 
@@ -10,4 +10,4 @@ public:
     mutex mFork;
 };
 
-#endif //UNTITLED4_FORK_H
+#endif //SRC_FORK_H_

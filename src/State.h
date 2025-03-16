@@ -1,9 +1,7 @@
-#ifndef UNTITLED4_STATE_H
-#define UNTITLED4_STATE_H
-
+#ifndef SRC_STATE_H_
+#define SRC_STATE_H_
 #include <stdio.h>
 #include <iostream>
-
 
 enum class State: int {
     EAT = 1,
@@ -13,4 +11,4 @@ enum class State: int {
     PUT_DOWN_FORK = 7,
 };
 
-#endif //UNTITLED4_STATE_H
+#endif //SRC_STATE_H_

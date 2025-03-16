@@ -1,5 +1,7 @@
-#include "./Philosopher.h"
+#include "Philosopher.h"
+#include <stdlib.h>
 #include <thread>
+#include <string>
 
 void printDinner();
 
@@ -16,9 +18,6 @@ void Philosopher::think() {
 }
 
 void Philosopher::eat() {
-    //TODO
-    //parzystosc i nieparzystosc
-
     printState(1);
     this_thread::sleep_for(chrono::seconds(rand() % 5 + 1));
 }
@@ -57,10 +56,6 @@ void Philosopher::printState(int state) {
     printDinner();
 
     mPrint.unlock();
-
-    //TODO
-    //1. dodac kolory jak w projekcie z algorytmow
-    //2. no i teraz jakas globalna funkcja i wowczas wykorzystujemy ten static mutex do printowania zeby tylko jeden mogl naraz pisac
 }
 
 int Philosopher::getId() {

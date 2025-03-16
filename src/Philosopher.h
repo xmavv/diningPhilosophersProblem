@@ -1,9 +1,10 @@
-#ifndef UNTITLED4_PHILOSOPHER_H
-#define UNTITLED4_PHILOSOPHER_H
-#include "./Fork.h"
-#include "./State.h"
-#include <iostream>
+#ifndef SRC_PHILOSOPHER_H_
+#define SRC_PHILOSOPHER_H_
+#include "Fork.h"
+#include "State.h"
 #include <vector>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -29,4 +30,4 @@ public:
     string castCurrentState();
 };
 
-#endif //UNTITLED4_PHILOSOPHER_H
+#endif //SRC_PHILOSOPHER_H_
