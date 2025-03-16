@@ -18,7 +18,9 @@ chodzi o to, aby zaimplementowac mechanizmy prewentujace deadlocka (gdy wszyscy 
 ## Instrukcje uruchomienia projektu
 
 #### uruchomienie projektu
-w sciezce projektu ```philosophers.exe```
+w sciezce projektu ```philosophers.exe 5```
+
+gdzie argument to ilosc filozofow
 
 #### linter
 w sciezce projektu

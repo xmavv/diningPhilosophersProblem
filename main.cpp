@@ -44,8 +44,17 @@ void printDinner() {
     }
 }
 
-int main() {
-    const int numOfPhilosophers = 10;
+int main(int argc, char *argv[]) {
+
+    if(argc != 2) {
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+        cerr << "make sure to provide exactly 1 argument - number of philosophers!" <<endl<<endl;
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+        exit(1);
+    }
+
+    const int numOfPhilosophers = atoi(argv[1]);
 
     vector<Philosopher> philosophers;
     vector<Fork> forks(numOfPhilosophers);
