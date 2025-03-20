@@ -1,5 +1,8 @@
 # DINING PHILOSOPHERS PROBLEM
 
+![image](https://github.com/user-attachments/assets/8079257c-3e38-435c-88a1-83b3ff1c4bbe)
+
+
 - [Opis problemu](#opis-problemu)
 - [Instrukcje uruchomienia projektu](#instrukcje-uruchomienia-projektu)
     - [uruchomienie projektu](#uruchomienie-projektu)
@@ -40,3 +43,6 @@ deadlock to sytuacja w ktorej zaden watek nie moze kontynuowac pracy, poniewaz k
 poczatkowa sytuacja gdzie sekcja krytyczna moze wystapic, to gdy wszyscy filozofowie podniasa ten sam widelec np. lewy
 najprostszym rozwiazaniem jest zaimplementowanie rozwiazania modulo 2, przysty filozof podnosi lewy widelec jako pierwszy, nieparzysty filozof podnosi prawy widelec jako pierwszy
 (majac na mysli parzysty filozof mam na mysli jego miejsce w tablicy)
+
+problem można też rozwiązać w alternatywny sposób, stosując semafory, wówczas filozof może jeść tylko gdy dwa widelce są dostępne co reprezentuje właśnie semafor.
+w zastosowaniu z mutexami, podnoszone widelce są "synchronicznie", najpierw lewy potem prawy, więc filozof może czekać gdy podniesiony jest tylko jeden widelec.
